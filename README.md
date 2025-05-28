@@ -39,26 +39,7 @@ Key features include:
 
    npm run dev
 
-   The app will be available at `http://localhost:5173`.
-
-## Folder Structure
-
-Social-Verify/
-├── attached_assets/       
-├── client/                
-│   ├── public/           
-│   ├── src/
-│   │   ├── components/    
-│   │   ├── hooks/         
-│   │   ├── lib/           
-│   │   ├── pages/         
-│   │   ├── App.tsx       
-│   │   └── main.tsx      
-│   └── index.html         
-├── theme.json             
-├── tsconfig.json         
-├── vite.config.ts        
-└── .gitignore             
+   The app will be available at `http://localhost:5173`.           
 
 ## Usage
 
