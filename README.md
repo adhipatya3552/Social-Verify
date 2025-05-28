@@ -27,7 +27,7 @@ Key features include:
 
 1. **Clone the repository**
 
-   git clone https://github.com/yourusername/Social-Verify.git
+   git clone https://github.com/adhipatya3552/Social-Verify.git
 
    cd Social-Verify
 
