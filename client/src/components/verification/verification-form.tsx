@@ -212,9 +212,12 @@ const VerificationForm = ({ onResultsReceived }: VerificationFormProps) => {
     }
     
     // Find matching account in mock data or use a random one
-    let matchedAccount = MOCK_DATA_ARRAY.find(account => 
-      account.handle.toLowerCase() === handle.toLowerCase()
-    );
+    let matchedAccount = MOCK_DATA_ARRAY.find(account => {
+      // Normalize both input and mock handle for comparison
+      const inputHandle = handle.replace(/^@/, '').toLowerCase();
+      const mockHandle = account.handle.replace(/^@/, '').toLowerCase();
+      return inputHandle === mockHandle;
+    });
     
     if (!matchedAccount) {
       // Use a random account if no match found

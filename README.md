@@ -1,63 +1,77 @@
-# Social-Verify
+# 🔍 Social-Verify
 
-## Project Overview
+## 🧠 Project Overview
 
-Social-Verify is a frontend-focused web application that allows users to verify whether a social media account or profile ID is genuine or fake. Users can enter a username or full profile URL for platforms such as Twitter, Instagram, Facebook, and TikTok. The application analyzes various factors—account age, posting patterns, follower metrics, and behavioral indicators—to produce a comprehensive credibility report and human-likelihood score. Additionally, it offers an optional comparison feature to evaluate similarities between two different accounts.
+**Social-Verify** is a frontend-focused web application that helps users verify whether a social media account is real or fake. Just enter a username or profile URL for platforms like Twitter, Instagram, Facebook, or TikTok, and get an instant credibility report with a human-likelihood score. 
 
-Key features include:
+Key Highlights:
 
-* **Real-time Verification**: Submit a profile URL and platform, and receive detailed verification results instantly.
-* **Credibility Score**: A numeric score reflecting overall trustworthiness, accompanied by granular factor analysis (e.g., Account Age, Engagement Ratio).
-* **Bot Behavior Indicators**: Qualitative flags highlighting potential automated or suspicious behaviors.
-* **Comparison Tool**: Compare two accounts side-by-side on metrics like follower overlap, content similarity, and behavior patterns.
-* **Responsive UI**: Built with a mobile-first design, ensuring smooth experience on all devices.
+- ⚡ **Real-Time Verification**: Submit a profile and get instant results.
+- 📊 **Credibility Score**: Numerical trust score with detailed factor breakdowns.
+- 🤖 **Bot Behavior Indicators**: Flags for automated or suspicious activities.
+- 🆚 **Comparison Tool**: Compare two accounts on overlap, content, and behavior.
+- 📱 **Responsive UI**: Optimized for mobile, tablet, and desktop experiences.
 
-## Tech Stack
+---
 
-* **Frontend**: React + TypeScript, Vite
-* **UI Components**: Custom shadcn/ui components (Form, Button, Input, Tabs, Select, Accordion, Toaster)
-* **Styling**: Tailwind CSS
-* **Form Management & Validation**: react-hook-form + Zod
-* **Data Fetching**: @tanstack/react-query (QueryClient, useMutation)
-* **Routing**: React Router (via `pages` directory under Vite)
-* **Utilities**: Fetch wrapper in `lib/queryClient.ts`, common types in `lib/types.ts`
-* **State & Hooks**: Custom hooks (`use-mobile`, `use-toast`)
+## ✨ Features
 
-## Installation & Setup
+1. **🔐 Account Verification**
+   - Enter a username or full URL.
+   - Select a platform (Twitter, Instagram, etc.).
+   - Receive a complete report with credibility, human-likelihood, and insights.
 
-1. **Clone the repository**
+2. **🆚 Account Comparison**
+   - Compare two accounts.
+   - View similarity scores, common followers, and behavior patterns.
 
-   git clone https://github.com/yourusername/Social-Verify.git
+3. **📈 Detailed Metrics**
+   - Account age, engagement rate, content type, post frequency, etc.
+
+4. **🧪 Mock Data**
+   - Sample data for testing (via `verification-form.tsx`, `comparison-form.tsx`).
+
+5. **⚙️ Extensible UI Components**
+   - Built using `shadcn/ui` for clean forms, buttons, tabs, and accordions.
+
+---
+
+## 🛠 Tech Stack
+
+- 💻 **Frontend**: React + TypeScript + Vite
+- 🎨 **Styling**: Tailwind CSS
+- 🧩 **UI Components**: shadcn/ui
+- ✅ **Validation**: react-hook-form + Zod
+- 🔄 **Data Fetching**: @tanstack/react-query
+- 🚦 **Routing**: React Router (via `pages/`)
+- 🔌 **Custom Utilities**: 
+  - `lib/queryClient.ts`: API wrappers
+  - `lib/types.ts`: Shared types
+  - Custom hooks: `use-mobile`, `use-toast`
+
+---
+
+## 🚀 Installation & Setup
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/adhipatya3552/Social-Verify.git
    cd Social-Verify
+   ```
 
-2. **Install dependencies**
-
+2. **Install Dependencies**
+   ```bash
    npm install
+   ```
 
-3. **Start the development server**
-
+3. **Start the Development Server**
+   ```bash
    npm run dev
+   ```
 
-   The app will be available at `http://localhost:5173`.
+The app will be available at `http://localhost:5173`.
 
-## Folder Structure
-
-Social-Verify/
-├── attached_assets/       
-├── client/                
-│   ├── public/           
-│   ├── src/
-│   │   ├── components/    
-│   │   ├── hooks/         
-│   │   ├── lib/           
-│   │   ├── pages/         
-│   │   ├── App.tsx       
-│   │   └── main.tsx      
-│   └── index.html         
-├── theme.json             
-├── tsconfig.json         
-├── vite.config.ts        
-└── .gitignore             
+---
 
 ## Usage
 
@@ -75,9 +89,13 @@ Social-Verify/
    * Enter two distinct account identifiers.
    * Click **Compare** to view similarity scores, common followers count, and other comparative metrics.
 
+---
+
 ## Mock Data & API
 
 * By default, the app uses in-memory mock data defined in `verification-form.tsx` and `comparison-form.tsx`. Remove or replace these with real API calls by updating `apiRequest` URLs in `lib/queryClient.ts` and implementing a secure backend.
+
+---
 
 ## Contributing
 

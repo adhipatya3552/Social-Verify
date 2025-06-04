@@ -8,6 +8,7 @@ import { apiRequest } from "@/lib/queryClient";
 import { useMutation } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
 import { string } from "zod";
+import { useLocation } from "wouter";
 
 const ScoreStatusIcon = ({ score }: { score: number }) => {
   if (score >= 80) {
@@ -65,6 +66,7 @@ type ResultsDisplayProps = {
 const ResultsDisplay = ({ results }: ResultsDisplayProps) => {
   const { toast } = useToast();
   const resultsRef = useRef<HTMLDivElement>(null);
+  const [, navigate] = useLocation();
 
   const reportMutation = useMutation({
     mutationFn: async (accountId: string) => {
@@ -94,10 +96,12 @@ const ResultsDisplay = ({ results }: ResultsDisplayProps) => {
   };
 
   const handleCompare = () => {
-    toast({
-      title: "Compare Feature",
-      description: "This feature will be available soon.",
-    });
+    if (results && results.handle) {
+      const handle = results.handle.replace(/^@/, '');
+      navigate(`/compare?account=${encodeURIComponent(handle)}`);
+    } else {
+      navigate('/compare');
+    }
   };
 
   const handleDownloadReport = () => {

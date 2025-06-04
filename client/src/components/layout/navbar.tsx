@@ -1,6 +1,7 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 
 const Navbar = () => {
+  const [location] = useLocation();
   return (
     <header className="bg-white border-b border-slate-200 sticky top-0 z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,19 +17,19 @@ const Navbar = () => {
               <span className="ml-2 text-xl font-bold text-primary">SocialVerify</span>
             </Link>
             <nav className="ml-8 flex space-x-8">
-              <Link href="/" className="inline-flex items-center px-1 pt-1 border-b-2 border-secondary text-sm font-medium">
+              <Link href="/" className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${location === '/' ? 'border-secondary text-primary' : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'}`}>
                 Home
               </Link>
-              <Link href="/compare" className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-slate-500 hover:text-slate-700 hover:border-slate-300">
+              <Link href="/compare" className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${location === '/compare' ? 'border-secondary text-primary' : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'}`}>
                 Compare Accounts
               </Link>
-              <Link href="/how-it-works" className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-slate-500 hover:text-slate-700 hover:border-slate-300">
+              <Link href="/how-it-works" className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${location === '/how-it-works' ? 'border-secondary text-primary' : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'}`}>
                 How It Works
               </Link>
-              <Link href="/api" className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-slate-500 hover:text-slate-700 hover:border-slate-300">
+              <Link href="/api" className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${location === '/api' ? 'border-secondary text-primary' : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'}`}>
                 API
               </Link>
-              <Link href="/pricing" className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-slate-500 hover:text-slate-700 hover:border-slate-300">
+              <Link href="/pricing" className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${location === '/pricing' ? 'border-secondary text-primary' : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'}`}>
                 Pricing
               </Link>
             </nav>
