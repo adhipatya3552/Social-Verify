@@ -2,6 +2,7 @@ import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import { useState } from 'react';
 
 const PricingPage = () => {
   return (

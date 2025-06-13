@@ -11,6 +11,8 @@ import ComparePage from "@/pages/compare";
 import HowItWorksPage from "@/pages/how-it-works";
 import ApiPage from "@/pages/api";
 import PricingPage from "@/pages/pricing";
+import SignIn from "@/pages/SignIn"; 
+import SignUp from "@/pages/SignUp";
 
 function Router() {
   return (
@@ -20,6 +22,8 @@ function Router() {
       <Route path="/how-it-works" component={HowItWorksPage} />
       <Route path="/api" component={ApiPage} />
       <Route path="/pricing" component={PricingPage} />
+      <Route path="/signin" component={SignIn} />
+      <Route path="/signup" component={SignUp} />
       <Route component={NotFound} />
     </Switch>
   );

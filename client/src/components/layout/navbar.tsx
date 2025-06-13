@@ -1,4 +1,5 @@
 import { Link, useLocation } from "wouter";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [location] = useLocation();
@@ -34,10 +35,37 @@ const Navbar = () => {
               </Link>
             </nav>
           </div>
-          <div className="flex items-center">
-            <button className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-secondary hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-              Sign In
-            </button>
+          <div className="flex items-center space-x-4">
+            <Link href="/signin">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={
+                  "inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white " +
+                  (location === "/signin"
+                    ? "bg-blue-700"
+                    : "bg-blue-600 hover:bg-blue-700") +
+                  " focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform duration-200"
+                }
+              >
+                Sign In
+              </motion.button>
+            </Link>
+            <Link href="/signup">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={
+                  "inline-flex items-center px-4 py-2 border border-blue-600 text-sm font-medium rounded-lg " +
+                  (location === "/signup"
+                    ? "bg-white text-blue-700"
+                    : "bg-white text-blue-600 hover:bg-blue-50") +
+                  " focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform duration-200"
+                }
+              >
+                Sign Up
+              </motion.button>
+            </Link>
           </div>
         </div>
       </div>
